@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class GamePanel extends JPanel {
     private MouseInputs mouseInputs;
-    private float xDelta = 100, yDelta = 100, frames = 0, xDir = .01f, yDir = .015f;
+    private float xDelta = 100, yDelta = 100, frames = 0, xDir = 1f, yDir = 1f;
     private long lastCheck = 0;
     private int rectWidth = 200, rectHeight = 50;
     private Color color;
@@ -28,7 +28,7 @@ public class GamePanel extends JPanel {
         g.setColor(color);
         updateRect();
         g.fillRect((int)xDelta, (int)yDelta, rectWidth, rectHeight);
-        repaint();
+        
     }
     public void updateRect(){
         xDelta += xDir;
@@ -46,16 +46,13 @@ public class GamePanel extends JPanel {
 
     public void changeXDelta(int value) {
         xDelta += value;
-        repaint();
     }
     public void changeYDelta(int value) {
         yDelta += value;
-        repaint();
     }
     public void setRectPosition(int x, int y){
         xDelta = x;
         yDelta = y;
-        repaint();
     }
     public Color getRandomColor(){
         int r = random.nextInt(255);
