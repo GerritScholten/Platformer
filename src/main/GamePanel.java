@@ -10,7 +10,8 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 
-import static utils.PlayerConstants.Constants.* ;
+import static utils.Constants.PlayerConstants.*;
+import static utils.Constants.Directions.*;
 
 
 public class GamePanel extends JPanel {
@@ -25,6 +26,8 @@ public class GamePanel extends JPanel {
 
     private int animationTick, animationSpeed = 15, animationIndex;
     private int playerAction = IDLE;
+    private int playerDirection = -1;
+    private boolean isMoving = false;
 
     GamePanel(){
         mouseInputs = new MouseInputs(this);
@@ -36,13 +39,6 @@ public class GamePanel extends JPanel {
         setScreenSize();
     }
 
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        updateAnimation();
-        g.drawImage(animations[playerAction][animationIndex], (int)xDelta, (int)yDelta, 256, 256, null);
-    }
-
     private void updateAnimation(){
         animationTick++;
         if(animationTick >= animationSpeed){
@@ -52,6 +48,14 @@ public class GamePanel extends JPanel {
                 animationIndex = 0;
             }
         }
+    }
+
+    public void setDirection(int direction){
+        playerDirection = direction;
+        isMoving = true;
+    }
+    public void setIsMoving(boolean isMoving){
+        this.isMoving = isMoving;
     }
 
     private void setScreenSize(){
@@ -75,16 +79,6 @@ public class GamePanel extends JPanel {
         }
     }
 
-    public void changeXDelta(int value) {
-        xDelta += value;
-    }
-    public void changeYDelta(int value) {
-        yDelta += value;
-    }
-    public void setImgPosition(int x, int y){
-        xDelta = x;
-        yDelta = y;
-    }
     private void loadAnimation(){
         animations = new BufferedImage[8][14 ];
         for (int j = 0; j <= animations.length - 1; j++) {
@@ -92,5 +86,33 @@ public class GamePanel extends JPanel {
                 animations[j][i] = animationSprite.getSubimage(i * 64, j * 64, 64, 64);
             }
         }
+    }
+
+    private void updatePosition(){
+        if (isMoving) {
+            switch (playerDirection) {
+                case LEFT -> xDelta -= 5;
+                case RIGHT -> xDelta += 5;
+                case UP -> yDelta -= 5;
+                case DOWN -> yDelta += 5;
+            }
+        }
+    }
+
+    private void setAnimation() {
+        if (isMoving){
+            playerAction = RUNNING;
+        }else  {
+            playerAction = IDLE;
+        }
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        updateAnimation();
+        setAnimation();
+        updatePosition();
+        g.drawImage(animations[playerAction][animationIndex], (int)xDelta, (int)yDelta, 256, 256, null);
     }
 }
