@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96c20a07-3624-4986-a9af-56ede48f8a18" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/DarkSamurai (64x64).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/PlayerConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlatformerTutorial.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PlatformerTutorial.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inputs/MouseInputs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inputs/MouseInputs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1713967426860</updated>
       <workItem from="1713967427859" duration="3027000" />
-      <workItem from="1714026078988" duration="18471000" />
+      <workItem from="1714026078988" duration="21837000" />
     </task>
     <servers />
   </component>
