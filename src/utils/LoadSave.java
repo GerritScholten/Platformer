@@ -7,6 +7,7 @@ import java.io.InputStream;
 
 public class LoadSave {
     public static final String PLAYER_ATLAS = "DarkSamurai (64x64).png";
+    public static final String LEVEL_ATLAS = "The Sidescroller's Dungeon Tiles 32x32.png";
 
     public static BufferedImage GetSpriteAtlas(String filename) {
         InputStream is = LoadSave.class.getResourceAsStream("/" + filename);

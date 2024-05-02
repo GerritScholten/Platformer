@@ -2,12 +2,14 @@ package main;
 
 import inputs.KeyboardInputs;
 import inputs.MouseInputs;
+import org.w3c.dom.ls.LSOutput;
+
 import javax.swing.*;
 import java.awt.*;
+import static main.Game.*;
 
 public class GamePanel extends JPanel {
     private MouseInputs mouseInputs;
-    private Dimension screenSize = new Dimension(1280, 768);
 
     private Game game;
 
@@ -21,9 +23,10 @@ public class GamePanel extends JPanel {
     }
 
     private void setScreenSize(){
-        setMinimumSize(screenSize);
+        Dimension screenSize = new Dimension(GAME_WIDTH, GAME_HEIGHT);
         setPreferredSize(screenSize);
-        setMaximumSize(screenSize);
+        System.out.println("size: " + GAME_WIDTH + ":" + GAME_HEIGHT);
+
     }
 
     public void updateGame(){
