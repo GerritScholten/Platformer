@@ -3,45 +3,49 @@ package main;
 import inputs.KeyboardInputs;
 import inputs.MouseInputs;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.util.Random;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
+
 
 public class GamePanel extends JPanel {
     private MouseInputs mouseInputs;
-    private float xDelta = 100, yDelta = 100, frames = 0, xDir = 1f, yDir = 1f;
-    private long lastCheck = 0;
-    private int rectWidth = 200, rectHeight = 50;
-    private Color color;
-    private Random random = new Random();
+    private float xDelta = 0, yDelta = 0;
+    private Dimension screenSize = new Dimension(1280, 768);
+    private BufferedImage img, subImg;
 
     GamePanel(){
         mouseInputs = new MouseInputs(this);
+        importImage();
+
         addKeyListener(new KeyboardInputs(this));
         addMouseListener(mouseInputs);
         addMouseMotionListener(mouseInputs);
+        setScreenSize();
+    }
+    private void setScreenSize(){
+        setMinimumSize(screenSize);
+        setPreferredSize(screenSize);
+        setMaximumSize(screenSize);
+    }
+
+    private void importImage(){
+        try {
+            InputStream is = getClass().getResourceAsStream("/DarkSamurai (64x64).png");
+            img = ImageIO.read(is);
+        }catch (IOException ex){
+            ex.printStackTrace();
+        }
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(color);
-        updateRect();
-        g.fillRect((int)xDelta, (int)yDelta, rectWidth, rectHeight);
-        
-    }
-    public void updateRect(){
-        xDelta += xDir;
-        yDelta += yDir;
-        if(xDelta >= getWidth() - rectWidth || xDelta <= 0){
-            color = getRandomColor();
-            xDir *= -1;
-
-        }
-        if(yDelta >= getHeight() - rectHeight|| yDelta <= 0){
-            color = getRandomColor();
-            yDir *= -1;
-        }
+        subImg = img.getSubimage(1 * 64, 2 * 64, 64, 64);
+        g.drawImage(subImg, (int)xDelta, (int)yDelta, 128, 128, null);
     }
 
     public void changeXDelta(int value) {
@@ -50,14 +54,8 @@ public class GamePanel extends JPanel {
     public void changeYDelta(int value) {
         yDelta += value;
     }
-    public void setRectPosition(int x, int y){
+    public void setImgPosition(int x, int y){
         xDelta = x;
         yDelta = y;
-    }
-    public Color getRandomColor(){
-        int r = random.nextInt(255);
-        int g = random.nextInt(255);
-        int b = random.nextInt(255);
-        return new Color(r, g, b);
     }
 }
