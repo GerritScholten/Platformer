@@ -1,6 +1,5 @@
 package entities;
 
-import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
 public abstract class Entity {
@@ -18,17 +17,5 @@ public abstract class Entity {
 
 	protected void initHitbox(float x, float y, float width, float height) {
 		hitbox = new Rectangle2D.Float(x, y, width, height);
-	}
-
-//	protected void updateHitbox(){
-//		hitbox.x = (int) x;
-//		hitbox.y = (int) y;
-//	}
-	public Rectangle2D.Float getHitbox() {
-		return hitbox;
-	}
-	protected void drawHitbox(Graphics g) {
-		g.setColor(Color.red);
-		g.drawRect((int) hitbox.x, (int) hitbox.y, (int) hitbox.width, (int) hitbox.height);
 	}
 }
