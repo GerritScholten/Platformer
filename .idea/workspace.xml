@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96c20a07-3624-4986-a9af-56ede48f8a18" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gamestates/Gamestate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gamestates/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gamestates/Playing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gamestates/State.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gamestates/StateMethods.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/MenuButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/DarkSamurai (64x64).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/The Sidescroller's Dungeon Tiles 32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inputs/KeyboardInputs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inputs/KeyboardInputs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inputs/MouseInputs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inputs/MouseInputs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/LoadSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/LoadSave.java" afterDir="false" />
-    </list>
+    <list default="true" id="96c20a07-3624-4986-a9af-56ede48f8a18" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,7 +112,7 @@
       <workItem from="1714026078988" duration="29138000" />
       <workItem from="1715071456027" duration="825000" />
       <workItem from="1715073059626" duration="4000" />
-      <workItem from="1715162967660" duration="10501000" />
+      <workItem from="1715162967660" duration="12456000" />
     </task>
     <servers />
   </component>
